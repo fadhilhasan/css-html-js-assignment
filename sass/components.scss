@@ -1,0 +1,580 @@
+/////////////////////////////
+/// HEADER
+.text {
+  font-family: "Pacifico", cursive;
+  font-size: 2.4rem;
+  height: 10.4rem;
+  font-weight: 400;
+  color: var(--color-secondary);
+
+  @include flex-align-center;
+
+  &__span {
+    color: var(--color-tertiary);
+  }
+}
+
+/////////////////////////////
+/// NAVIGATION
+
+.mid-nav {
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+
+  &__item {
+    list-style: none;
+    background-color: var(--color-grey-dark);
+    width: 8rem;
+    height: 8rem;
+    border-radius: 1.25rem;
+    position: relative;
+    transition: all 0.2s;
+
+    @include flex-align-center;
+    justify-content: center;
+
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+
+    &:hover {
+      background-color: var(--color-secondary);
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 1.25rem;
+      background-color: var(--color-secondary);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    transition: all 0.2s;
+  }
+
+  &__link:hover {
+    color: var(--bg-color);
+  }
+
+  &__icon {
+    margin-bottom: 0.5rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: var(--text-profile);
+    transition: fill 0.2s;
+
+    &:hover {
+      fill: var(--bg-color);
+    }
+  }
+
+  &__item.active {
+    background-color: var(--color-secondary);
+
+    .mid-nav__icon {
+      fill: var(--bg-color);
+    }
+
+    .mid-nav__link {
+      color: var(--bg-color);
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 1.25rem;
+        background-color: var(--color-secondary);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+/////////////////////////////
+/// SIDEBAR
+.profile {
+  margin-top: 3rem;
+  @include flex-align-center;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  &__photo {
+    margin-bottom: 1rem;
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+
+  &__job {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #0b090980;
+  }
+}
+
+/////////////////////////////
+/// SOSMED
+.sosmed {
+  margin-bottom: 2rem;
+  &-list {
+    list-style: none;
+    @include flex-align-center;
+    justify-content: center;
+
+    &__item {
+      background-color: var(--color-card);
+      padding: 1.29rem 1.55rem;
+      width: 6rem;
+      height: 6.1rem;
+      border-radius: 0.5rem;
+      margin-right: 1rem;
+
+      @include flex-align-center;
+      justify-content: center;
+
+      &-img {
+        width: 1.42rem;
+        height: 1.98rem;
+      }
+    }
+  }
+}
+
+/////////////////////////////
+/// CONTACT
+.contact-card {
+  background-color: var(--color-card);
+  // padding: 2rem;
+  width: 35rem;
+  height: 35rem;
+  margin-bottom: 3rem;
+  border-radius: 1.25rem;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media only screen and (max-width: $bp-large1) {
+    margin: 0 2rem;
+  }
+
+  &__item {
+    @include flex-align-center;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 2rem;
+
+    margin-bottom: 1rem;
+  }
+
+  &__icon {
+    margin-right: 1.5rem;
+    width: 1.2rem;
+    height: 2rem;
+
+    &-email {
+      // width: 1.75rem;
+      // height: 1.75rem;
+      margin-right: 1rem;
+    }
+
+    &-pin {
+      width: 2.4rem;
+      height: 2.4rem;
+      fill: var(--color-secondary);
+    }
+  }
+
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &_desc-a {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-profile);
+  }
+
+  &_desc-b {
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+
+  &__button {
+    border-radius: 100rem;
+    width: 18.5rem;
+    height: 4.4rem;
+    background-color: var(--color-secondary);
+    border: none;
+    padding: 0.6rem 1.25rem;
+    cursor: pointer;
+    text-decoration: none;
+
+    @include flex-align-center;
+    justify-content: center;
+    margin: auto auto;
+    transition: all 0.2s;
+
+    &:hover {
+      scale: 110%;
+    }
+
+    &-text {
+      color: var(--bg-color);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+/////////////////////////////
+/// DESCRIPTION
+.description {
+  margin: 2rem 4rem;
+  font-size: 1.4rem;
+
+  &__header {
+    @include flex-align-center;
+
+    &-2 {
+      font-size: 3.2rem;
+      font-weight: 500;
+      font-family: "Poppins", sans-serif;
+    }
+
+    &-3 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      font-family: "Poppins", sans-serif;
+    }
+  }
+
+  &__text {
+    font-size: 4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    margin-right: 2rem;
+  }
+
+  &__paragraph {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  &__header-2 {
+    font-size: 3.2rem;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 2.5rem;
+  }
+
+  &__card {
+    background-color: var(--color-grey-light);
+    border-radius: 1.25rem;
+    margin-bottom: 2rem;
+    width: 33rem;
+    height: 17rem;
+    // position: relative;
+
+    @include flex-align-center;
+
+    &:first-child {
+      background-color: var(--color-card-main);
+    }
+
+    &:last-child {
+      background-color: var(--color-card-main);
+    }
+
+    &-item {
+      @include flex-align-center;
+    }
+
+    &-img {
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-right: 1rem;
+    }
+
+    @media only screen and (max-width: $bp-medium2) {
+      display: flex;
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  &_container {
+    margin-left: 1rem;
+  }
+}
+
+/////////////////////////////
+/// RESUME
+.resume {
+  margin: 2rem 4rem;
+  font-size: 1.4rem;
+
+  &__header {
+    @include flex-align-center;
+
+    &-text {
+      margin-right: 2rem;
+      font-size: 4rem;
+      font-weight: 500;
+      font-family: "Poppins", sans-serif;
+    }
+  }
+
+  &__box {
+    display: flex;
+    width: 56.4rem;
+    height: 4.6rem;
+    margin-bottom: 2rem;
+  }
+
+  &__education {
+    @include flex-align-center;
+
+    &:not(:last-child) {
+      margin-right: 16rem;
+    }
+
+    &-text {
+      font-size: 2.8rem;
+      margin-left: 1.5rem;
+      font-weight: 500;
+    }
+  }
+
+  &__card {
+    background-color: #ffeed9;
+    font-size: 1.4rem;
+    width: 28.9rem;
+    height: 11.6rem;
+    border-radius: 0.58rem;
+    line-height: 2;
+    @include flex-align-center;
+
+    &:first-child,
+    &:last-child {
+      background-color: var(--color-card-main);
+    }
+
+    &-item {
+      margin-left: 2rem;
+    }
+
+    &-text {
+      font-weight: 400;
+      color: var(--text-profile);
+
+      &-1 {
+        font-weight: 600;
+      }
+
+      &-2 {
+        font-weight: 500;
+      }
+    }
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-left: 5rem;
+  }
+}
+
+/////////////////////////////
+/// SKILL
+.skill {
+  margin: 2rem 4rem;
+  font-size: 1.4rem;
+  margin-top: 4rem;
+
+  &__header {
+    display: flex;
+  }
+
+  &__life {
+    width: 61.2rem;
+    height: 22.2rem;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+
+    display: flex;
+
+    &-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+
+      &-item {
+        background-color: var(--color-grey-dark);
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+        padding: 0.4rem 0.8rem;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
+
+/////////////////////////////
+/// Contact
+.contact__box {
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+
+  &-1 {
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+
+  &-item {
+    background-color: var(--color-card-main);
+    width: 33.3rem;
+    height: 15rem;
+    border-radius: 1.25rem;
+
+    &:last-child {
+      background-color: var(--color-grey-light);
+    }
+
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+
+    &-1 {
+      display: flex;
+    }
+
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  &-img {
+    margin-right: 1rem;
+  }
+  &-text {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  &-paragraph {
+    margin-left: 3.5rem;
+  }
+}
+
+/////////////////////////////
+/// CTA
+.cta {
+  font-size: 1.6rem;
+  width: 69.4rem;
+  height: 39.2rem;
+  border-radius: 1.25rem;
+  position: relative;
+  background-color: #f8fbfb;
+  border: var(--border);
+  &__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60rem;
+    height: 35rem;
+
+    @media only screen and(max-width: $bp-medium) {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  &__form {
+    margin-top: 2rem;
+  }
+
+  &__txt {
+    border-bottom: 0.2rem solid #b5b5b5;
+    margin: 3rem 0;
+
+    &-input {
+      width: 100%;
+      padding: 0 0.5rem;
+      height: 2rem;
+      font-size: 1.6rem;
+      border: none;
+      background: none;
+      outline: none;
+    }
+  }
+
+  &__txt > label {
+    font-weight: 600;
+  }
+
+  &__btn {
+    width: 10rem;
+    height: 4rem;
+    border-radius: 100rem;
+    border: none;
+    background: linear-gradient(to right, #fd8a18, #ee2c0b);
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    transition: all 0.2s;
+
+    &:hover {
+      scale: 110%;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      bottom: 1px;
+      left: 1px;
+      background-color: var(--bg-color);
+      border-radius: 100rem;
+      z-index: -1;
+    }
+  }
+
+  @media only screen and(max-width: $bp-medium) {
+    max-width: 100%;
+    width: 100%;
+  }
+}

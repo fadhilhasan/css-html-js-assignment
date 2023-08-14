@@ -1,0 +1,124 @@
+.container {
+  max-width: 144rem;
+  margin: 1.12rem 6.25rem;
+
+  min-height: 10.24rem;
+
+  @media only screen and(max-width: $bp-largest) {
+    margin: 2rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.header {
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.content {
+  display: flex;
+
+  @media only screen and(max-width: $bp-medium) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+  }
+
+  @media only screen and (max-width: $bp-large1) {
+    margin-left: 4rem;
+  }
+}
+
+.main {
+  background-color: var(--color-primary);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column;
+  flex: 1;
+
+  @media only screen and (max-width: $bp-medium1) {
+    margin-left: 5rem;
+  }
+}
+
+.middle {
+  background-color: #f2f5f9;
+  box-shadow: var(--shadow);
+  border: var(--border);
+  width: 50.3rem;
+  height: 10rem;
+  margin-right: 22rem;
+  border-radius: 1.25rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-medium1) {
+    margin-bottom: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-medium2) {
+    margin-left: 20rem;
+  }
+}
+
+.about {
+  background-color: var(--bg-color);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  width: 85rem;
+  height: 70rem;
+  border-radius: 1.25rem;
+  margin-top: 2rem;
+  margin-right: 10rem;
+
+  @media only screen and(max-width: $bp-medium) {
+    max-width: 75%;
+    width: 75%;
+  }
+
+  @media only screen and (max-width: $bp-large1) {
+    margin-left: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-medium2) {
+    padding-bottom: auto;
+  }
+}
+
+.sidebar {
+  box-shadow: var(--shadow);
+  background-color: var(--bg-color);
+  border: var(--border);
+  border-radius: 1.25rem;
+  width: 40rem;
+  height: 82rem;
+  @include flex-align-center;
+  flex-direction: column;
+
+  @media only screen and (max-width: $bp-medium1) {
+    margin-left: 3rem;
+  }
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.resume__box {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
