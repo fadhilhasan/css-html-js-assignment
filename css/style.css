@@ -280,6 +280,10 @@ body {
     margin-right: 1.5rem;
     width: 1.2rem;
     height: 2rem; }
+    .contact-card__icon-phone {
+      width: 1.75rem;
+      height: 1.75rem;
+      margin-right: 1rem; }
     .contact-card__icon-email {
       margin-right: 1rem; }
     .contact-card__icon-pin {
