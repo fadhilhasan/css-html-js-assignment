@@ -111,8 +111,8 @@
 
               <a
                 href="Resume.pdf"
-                download="Resume.pdf"
                 class="contact-card__button"
+                onclick="unduhResume('Resume.pdf')"
               >
                 <img
                   src="img/material-symbols_download.svg"
@@ -126,7 +126,7 @@
         </section>
 
         <main class="main">
-          <nav class="middle">
+          <nav class="middle" id="navbar">
             <ul class="mid-nav">
               <li class="mid-nav__item">
                 <a href="index.html" class="mid-nav__link">
@@ -136,7 +136,6 @@
                   <p>Home</p>
                 </a>
               </li>
-              <!--  -->
               <li class="mid-nav__item active">
                 <a href="resume.html" class="mid-nav__link">
                   <svg class="mid-nav__icon">
@@ -145,7 +144,6 @@
                   <p>Resume</p>
                 </a>
               </li>
-
               <li class="mid-nav__item">
                 <a href="contact.html" class="mid-nav__link">
                   <svg class="mid-nav__icon">
@@ -187,7 +185,7 @@
               <div class="card">
                 <div class="resume__card">
                   <div class="resume__card-item">
-                    <p class="resume__card-text">2020-2021</p>
+                    <p class="resume__card-text"></p>
                     <p class="resume__card-text-1">Software Development</p>
                     <p class="resume__card-text-2">Moringa School</p>
                   </div>
@@ -195,7 +193,7 @@
 
                 <div class="resume__card">
                   <div class="resume__card-item">
-                    <p class="resume__card-text">2020-2021</p>
+                    <p class="resume__card-text"></p>
                     <p class="resume__card-text-1">Software Development</p>
                     <p class="resume__card-text-2">Moringa School</p>
                   </div>
@@ -203,7 +201,7 @@
 
                 <div class="resume__card">
                   <div class="resume__card-item">
-                    <p class="resume__card-text">2020-2021</p>
+                    <p class="resume__card-text"></p>
                     <p class="resume__card-text-1">Software Development</p>
                     <p class="resume__card-text-2">Moringa School</p>
                   </div>
@@ -267,4 +265,5 @@
       </div>
     </div>
   </body>
+  <script src="./js/index.js"></script>
 </html>
